@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language Detector</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Language Detector</h1>
+      <form action="{{ url_for('detect_language_route') }}" method="post">
+        <textarea
+          name="paragraph"
+          placeholder="Enter text paragraph..."
+          rows="4"
+        ></textarea>
+        <br />
+        <input type="submit" value="Detect Language" />
+      </form>
+      <div id="result">{% block result %}{% endblock %}</div>
+    </div>
+  </body>
+</html>
